@@ -10,6 +10,7 @@ editor_draw_drag_margin = true
 script = ExtResource( 2 )
 CanMove = true
 CanZoom = true
+speedCamera = 600.0
 speedZoom = Vector2( 0.2, 0.2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
