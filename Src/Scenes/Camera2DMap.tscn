@@ -12,12 +12,14 @@ CanMove = true
 CanZoom = true
 speedCamera = 600.0
 speedZoom = Vector2( 0.2, 0.2 )
+minZoom = Vector2( 0.2, 0.2 )
+maxZoom = Vector2( 4, 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1875, 1875 )
+motion_mirroring = Vector2( 1920, 1920 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 1 )
