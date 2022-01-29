@@ -18,6 +18,10 @@ config/name="Medieval Art"
 run/main_scene="res://Src/Scenes/Map.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ManagerZoom="*res://Src/MedievalArt/Manager/ManagerZoom.cs"
+
 [display]
 
 window/size/width=1920

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/GroundMap/output_2.png" type="Texture" id=1]
 [ext_resource path="res://Src/MedievalArt/Ground.cs" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/Roads/output_4.png" type="Texture" id=20]
 [ext_resource path="res://Fonts/FontRoads.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Fonts/Boister/Boisterb.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Fonts/FontKingdom.tres" type="DynamicFont" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
@@ -30,10 +31,10 @@ font_data = ExtResource( 22 )
 [node name="Map" type="Node2D"]
 
 [node name="Camera2DMap" parent="." instance=ExtResource( 4 )]
-visible = false
+position = Vector2( 1, 1 )
+minZoom = Vector2( 0.6, 0.6 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
-visible = false
 input_pickable = true
 script = ExtResource( 2 )
 
@@ -421,7 +422,10 @@ texture = ExtResource( 17 )
 position = Vector2( 4724, 4726 )
 texture = ExtResource( 15 )
 
-[node name="NameRoads" type="Node2D" parent="."]
+[node name="NameRoads" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Guinguand to Abbaye Saint-Mathieu de Fine-Terre" type="Label" parent="NameRoads"]
 margin_left = -873.0
@@ -507,6 +511,467 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Angers to Tours" type="Label" parent="NameRoads"]
+margin_left = 1402.0
+margin_top = 2038.0
+margin_right = 1585.0
+margin_bottom = 2056.0
+rect_rotation = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Angers to Tours"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bressuire to Tours" type="Label" parent="NameRoads"]
+margin_left = 1296.0
+margin_top = 2394.0
+margin_right = 1479.0
+margin_bottom = 2412.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Bressuire to Tours"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Les Sables-d\'Olonne toBressuire" type="Label" parent="NameRoads"]
+margin_left = 631.0
+margin_top = 2707.0
+margin_right = 814.0
+margin_bottom = 2746.0
+rect_rotation = -15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Les Sables-d'Olonne to
+Bressuire"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="La Rochelle toLuçon" type="Label" parent="NameRoads"]
+margin_left = 875.0
+margin_top = 2887.0
+margin_right = 1058.0
+margin_bottom = 2926.0
+rect_rotation = -89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "La Rochelle to
+Luçon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="La Rochelle to Poitier" type="Label" parent="NameRoads"]
+margin_left = 1250.0
+margin_top = 2850.0
+margin_right = 1433.0
+margin_bottom = 2889.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "La Rochelle to Poitier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saintes to Poitier" type="Label" parent="NameRoads"]
+margin_left = 1362.0
+margin_top = 3027.0
+margin_right = 1545.0
+margin_bottom = 3066.0
+rect_rotation = -56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Saintes to Poitier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saintes to Bordeaux" type="Label" parent="NameRoads"]
+margin_left = 1253.0
+margin_top = 3425.0
+margin_right = 1436.0
+margin_bottom = 3464.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Saintes to Bordeaux"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bordeaux to Biarritz" type="Label" parent="NameRoads"]
+margin_left = 998.0
+margin_top = 4448.0
+margin_right = 1181.0
+margin_bottom = 4487.0
+rect_rotation = -74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Bordeaux to 
+Biarritz"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bordeaux toRoquefort" type="Label" parent="NameRoads"]
+margin_left = 1319.0
+margin_top = 4473.0
+margin_right = 1502.0
+margin_bottom = 4512.0
+rect_rotation = -74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Bordeaux to
+Roquefort"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bordeaux to Dax" type="Label" parent="NameRoads"]
+margin_left = 983.0
+margin_top = 4792.0
+margin_right = 1166.0
+margin_bottom = 4831.0
+rect_rotation = -89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Bordeaux to 
+Dax"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cognac to Poitier" type="Label" parent="NameRoads"]
+margin_left = 1456.0
+margin_top = 3226.0
+margin_right = 1639.0
+margin_bottom = 3265.0
+rect_rotation = -56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Cognac to Poitier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angulema to Poitier" type="Label" parent="NameRoads"]
+margin_left = 1597.0
+margin_top = 3347.0
+margin_right = 1780.0
+margin_bottom = 3386.0
+rect_rotation = -89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Angulema to Poitier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angulema toConfolens" type="Label" parent="NameRoads"]
+margin_left = 1681.0
+margin_top = 3181.0
+margin_right = 1864.0
+margin_bottom = 3220.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Angulema to
+Confolens"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poitier to Limoges" type="Label" parent="NameRoads"]
+margin_left = 2041.0
+margin_top = 2980.0
+margin_right = 2224.0
+margin_bottom = 3019.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Poitier to Limoges"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nevers to Clermont Ferrand" type="Label" parent="NameRoads"]
+margin_left = 3236.0
+margin_top = 3026.0
+margin_right = 3447.0
+margin_bottom = 3065.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Nevers to Clermont Ferrand"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nevers toRoanne" type="Label" parent="NameRoads"]
+margin_left = 3338.0
+margin_top = 2821.0
+margin_right = 3549.0
+margin_bottom = 2860.0
+rect_rotation = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Nevers to
+Roanne"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Agne to Limoges" type="Label" parent="NameRoads"]
+margin_left = 1983.0
+margin_top = 3934.0
+margin_right = 2166.0
+margin_bottom = 3973.0
+rect_rotation = -74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Agne to Limoges"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bergerac to Limoges" type="Label" parent="NameRoads"]
+margin_left = 1837.0
+margin_top = 3849.0
+margin_right = 2020.0
+margin_bottom = 3888.0
+rect_rotation = -74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Bergerac to Limoges"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poitier to Brive" type="Label" parent="NameRoads"]
+margin_left = 2239.0
+margin_top = 3363.0
+margin_right = 2422.0
+margin_bottom = 3402.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Poitier to Brive"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brive to Cahor" type="Label" parent="NameRoads"]
+margin_left = 2282.0
+margin_top = 4071.0
+margin_right = 2465.0
+margin_bottom = 4110.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Brive to Cahor"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Montauban toToulouse" type="Label" parent="NameRoads"]
+margin_left = 2229.0
+margin_top = 4532.0
+margin_right = 2412.0
+margin_bottom = 4571.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Montauban to
+Toulouse"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Auch to Toulouse" type="Label" parent="NameRoads"]
+margin_left = 1934.0
+margin_top = 4839.0
+margin_right = 2117.0
+margin_bottom = 4878.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Auch to Toulouse"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Toulouse to Beziers" type="Label" parent="NameRoads"]
+margin_left = 2536.0
+margin_top = 5063.0
+margin_right = 2719.0
+margin_bottom = 5102.0
+rect_rotation = 15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Toulouse to Beziers"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beziers to Montpellier" type="Label" parent="NameRoads"]
+margin_left = 3336.0
+margin_top = 4989.0
+margin_right = 3519.0
+margin_bottom = 5028.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Beziers to
+Montpellier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Montpellier toNymes" type="Label" parent="NameRoads"]
+margin_left = 3543.0
+margin_top = 4839.0
+margin_right = 3726.0
+margin_bottom = 4878.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Montpellier to
+Nymes"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avignon to Aix-en-Provence" type="Label" parent="NameRoads"]
+margin_left = 4272.0
+margin_top = 4751.0
+margin_right = 4485.0
+margin_bottom = 4790.0
+rect_rotation = 44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Avignon to 
+Aix-en-Provence"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saint-Maximin-la-Sainte-Baume toNice" type="Label" parent="NameRoads"]
+margin_left = 4796.0
+margin_top = 4906.0
+margin_right = 5080.0
+margin_bottom = 4945.0
+rect_rotation = -15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Saint-Maximin-la-Sainte-Baume to
+Nice"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avignon to Marseille" type="Label" parent="NameRoads"]
+margin_left = 4074.0
+margin_top = 4752.0
+margin_right = 4295.0
+margin_bottom = 4791.0
+rect_rotation = 44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Avignon to 
+Marseille"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pau to Auch" type="Label" parent="NameRoads"]
+margin_left = 1472.0
+margin_top = 5003.0
+margin_right = 1655.0
+margin_bottom = 5042.0
+rect_rotation = -15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Pau to 
+Auch"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Condom toCahor" type="Label" parent="NameRoads"]
+margin_left = 1920.0
+margin_top = 4532.0
+margin_right = 2103.0
+margin_bottom = 4571.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Condom to
+Cahor"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poitier to Tours" type="Label" parent="NameRoads"]
+margin_left = 1794.0
+margin_top = 2349.0
+margin_right = 1977.0
+margin_bottom = 2388.0
+rect_rotation = -74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Poitier to Tours"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tours to Chartres" type="Label" parent="NameRoads"]
+margin_left = 2097.0
+margin_top = 1639.0
+margin_right = 2280.0
+margin_bottom = 1657.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Tours to Chartres"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Pontoulto Rerchays" type="Label" parent="NameRoads"]
 margin_left = -457.0
 margin_top = 1122.0
@@ -578,6 +1043,633 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cherbourg to Caen" type="Label" parent="NameRoads"]
+margin_left = 772.0
+margin_top = 472.0
+margin_right = 983.0
+margin_bottom = 490.0
+rect_rotation = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Cherbourg to Caen"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caen to Countances" type="Label" parent="NameRoads"]
+margin_left = 864.0
+margin_top = 634.0
+margin_right = 1075.0
+margin_bottom = 673.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Caen to 
+Countances"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Honfleur to Rouen" type="Label" parent="NameRoads"]
+margin_left = 1772.0
+margin_top = 452.0
+margin_right = 1983.0
+margin_bottom = 470.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Honfleur to Rouen"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rouen to Pontoise" type="Label" parent="NameRoads"]
+margin_left = 2352.0
+margin_top = 576.0
+margin_right = 2563.0
+margin_bottom = 594.0
+rect_rotation = 33.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Rouen to Pontoise"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beauvais to Paris" type="Label" parent="NameRoads"]
+margin_left = 2609.0
+margin_top = 440.0
+margin_right = 2820.0
+margin_bottom = 479.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Beauvais to 
+Paris"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beauvais to Amiens" type="Label" parent="NameRoads"]
+margin_left = 2570.0
+margin_top = 228.0
+margin_right = 2781.0
+margin_bottom = 267.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Beauvais to 
+Amiens"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Calais to Amiens" type="Label" parent="NameRoads"]
+margin_left = 2447.0
+margin_top = -469.0
+margin_right = 2658.0
+margin_bottom = -430.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Calais to Amiens"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beauvais to Arras" type="Label" parent="NameRoads"]
+margin_left = 2822.0
+margin_top = -133.0
+margin_right = 3033.0
+margin_bottom = -94.0001
+rect_rotation = -44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Beauvais to 
+Arras"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arras toLille" type="Label" parent="NameRoads"]
+margin_left = 3074.0
+margin_top = -410.0
+margin_right = 3285.0
+margin_bottom = -350.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Arras to
+Lille 
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saint Quentin toValenciennes" type="Label" parent="NameRoads"]
+margin_left = 3291.0
+margin_top = 82.9999
+margin_right = 3502.0
+margin_bottom = 143.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Saint Quentin to
+Valenciennes"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lille to Bruges" type="Label" parent="NameRoads"]
+margin_left = 3135.0
+margin_top = -715.0
+margin_right = 3346.0
+margin_bottom = -655.0
+rect_rotation = -89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Lille to Bruges
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lille to Gent" type="Label" parent="NameRoads"]
+margin_left = 3282.0
+margin_top = -740.0
+margin_right = 3493.0
+margin_bottom = -680.0
+rect_rotation = -44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Lille to Gent
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Versailes to Paris" type="Label" parent="NameRoads"]
+margin_left = 2482.0
+margin_top = 973.0
+margin_right = 2693.0
+margin_bottom = 1012.0
+rect_rotation = -15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Versailes to 
+Paris"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Melun" type="Label" parent="NameRoads"]
+margin_left = 2780.0
+margin_top = 933.0
+margin_right = 2991.0
+margin_bottom = 972.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to 
+Melun"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Montargis" type="Label" parent="NameRoads"]
+margin_left = 2946.0
+margin_top = 1454.0
+margin_right = 3157.0
+margin_bottom = 1493.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to 
+Montargis"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Montargis toNevers" type="Label" parent="NameRoads"]
+margin_left = 3106.0
+margin_top = 2009.0
+margin_right = 3317.0
+margin_bottom = 2048.0
+rect_rotation = 74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Montargis to
+Nevers"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Auxerre" type="Label" parent="NameRoads"]
+margin_left = 3223.0
+margin_top = 1265.0
+margin_right = 3434.0
+margin_bottom = 1304.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to 
+Auxerre"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Provins" type="Label" parent="NameRoads"]
+margin_left = 3080.0
+margin_top = 1073.0
+margin_right = 3291.0
+margin_bottom = 1112.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to 
+Provins"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Provins toTroyes" type="Label" parent="NameRoads"]
+margin_left = 3446.0
+margin_top = 1268.0
+margin_right = 3657.0
+margin_bottom = 1307.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Provins to
+Troyes"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Troyes to Ligny-en-Barrois" type="Label" parent="NameRoads"]
+margin_left = 3830.0
+margin_top = 1421.0
+margin_right = 4041.0
+margin_bottom = 1460.0
+rect_rotation = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Troyes to 
+Ligny-en-Barrois"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Troyes to Dijon" type="Label" parent="NameRoads"]
+margin_left = 3957.0
+margin_top = 1797.0
+margin_right = 4168.0
+margin_bottom = 1836.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Troyes to Dijon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dijon toChalon-sur-Saône" type="Label" parent="NameRoads"]
+margin_left = 4035.0
+margin_top = 2218.0
+margin_right = 4246.0
+margin_bottom = 2257.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Dijon to
+Chalon-sur-Saône"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chalon-sur-Saône toLyon" type="Label" parent="NameRoads"]
+margin_left = 4064.0
+margin_top = 2623.0
+margin_right = 4275.0
+margin_bottom = 2662.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Chalon-sur-Saône to
+Lyon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lyon to Grenoble" type="Label" parent="NameRoads"]
+margin_left = 4118.0
+margin_top = 3347.0
+margin_right = 4329.0
+margin_bottom = 3386.0
+rect_rotation = 44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Lyon to 
+Grenoble"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grenoble toGap" type="Label" parent="NameRoads"]
+margin_left = 4507.0
+margin_top = 3908.0
+margin_right = 4718.0
+margin_bottom = 3947.0
+rect_rotation = 44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Grenoble to
+Gap"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dijon toLons-le-Saunier" type="Label" parent="NameRoads"]
+margin_left = 4377.0
+margin_top = 2426.0
+margin_right = 4588.0
+margin_bottom = 2465.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Dijon to
+Lons-le-Saunier"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dijon to Besancon" type="Label" parent="NameRoads"]
+margin_left = 4377.0
+margin_top = 2069.0
+margin_right = 4588.0
+margin_bottom = 2108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Dijon to 
+Besancon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dole to Besancon" type="Label" parent="NameRoads"]
+margin_left = 4498.0
+margin_top = 2200.0
+margin_right = 4709.0
+margin_bottom = 2239.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Dole to 
+Besancon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reims toChalons-en-Champagne" type="Label" parent="NameRoads"]
+margin_left = 3705.0
+margin_top = 591.0
+margin_right = 3916.0
+margin_bottom = 630.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Reims to
+Chalons-en-Champagne"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chalons-en-Champagne toBar-le-duc" type="Label" parent="NameRoads"]
+margin_left = 3894.0
+margin_top = 816.0
+margin_right = 4105.0
+margin_bottom = 855.0
+rect_rotation = 15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Chalons-en-Champagne to
+Bar-le-duc"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Reims" type="Label" parent="NameRoads"]
+margin_left = 3116.0
+margin_top = 706.0
+margin_right = 3327.0
+margin_bottom = 745.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to Reims"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paris to Laon" type="Label" parent="NameRoads"]
+margin_left = 3079.0
+margin_top = 563.0
+margin_right = 3290.0
+margin_bottom = 602.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Paris to Laon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rouen to Evreux" type="Label" parent="NameRoads"]
+margin_left = 2123.0
+margin_top = 492.0
+margin_right = 2334.0
+margin_bottom = 531.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Rouen to 
+Evreux"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evreux to Drux" type="Label" parent="NameRoads"]
+margin_left = 2157.0
+margin_top = 766.0
+margin_right = 2368.0
+margin_bottom = 805.0
+rect_rotation = 74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Evreux to
+Drux"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drux to Paris" type="Label" parent="NameRoads"]
+margin_left = 2338.0
+margin_top = 902.0
+margin_right = 2549.0
+margin_bottom = 941.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Drux to Paris"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drux toChartres" type="Label" parent="NameRoads"]
+margin_left = 2240.0
+margin_top = 990.0
+margin_right = 2451.0
+margin_bottom = 1029.0
+rect_rotation = 74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Drux to
+Chartres"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chartres to Orleans" type="Label" parent="NameRoads"]
+margin_left = 2389.0
+margin_top = 1458.0
+margin_right = 2600.0
+margin_bottom = 1497.0
+rect_rotation = 74.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Chartres to 
+Orleans"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blois to Orleans" type="Label" parent="NameRoads"]
+margin_left = 2210.0
+margin_top = 1834.0
+margin_right = 2421.0
+margin_bottom = 1873.0
+rect_rotation = -30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Blois to 
+Orleans"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Orleans toBourges" type="Label" parent="NameRoads"]
+margin_left = 2653.0
+margin_top = 2048.0
+margin_right = 2864.0
+margin_bottom = 2087.0
+rect_rotation = 59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Orleans to
+Bourges"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drux toAntony" type="Label" parent="NameRoads"]
+margin_left = 2306.0
+margin_top = 1119.0
+margin_right = 2517.0
+margin_bottom = 1158.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Drux to
+Antony"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dieppe to Rouen" type="Label" parent="NameRoads"]
+margin_left = 2111.0
+margin_top = 81.0
+margin_right = 2322.0
+margin_bottom = 99.0
+rect_rotation = 89.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Dieppe to Rouen"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rouen to Abbeville" type="Label" parent="NameRoads"]
+margin_left = 2282.0
+margin_top = 227.0
+margin_right = 2493.0
+margin_bottom = 245.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Rouen to Abbeville"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avranches to falaise" type="Label" parent="NameRoads"]
+margin_left = 828.0
+margin_top = 1046.0
+margin_right = 1039.0
+margin_bottom = 1064.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Avranches to falaise"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Dinan to Rennes" type="Label" parent="NameRoads"]
 margin_left = 491.0
 margin_top = 1245.0
@@ -592,7 +1684,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rennes to Fougères2" type="Label" parent="NameRoads"]
+[node name="Rennes to Fougères" type="Label" parent="NameRoads"]
 margin_left = 690.0
 margin_top = 1400.0
 margin_right = 901.0
@@ -615,6 +1707,34 @@ rect_rotation = -15.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
 text = "Rennes to Pre-en-Pail"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Argentan to Draux" type="Label" parent="NameRoads"]
+margin_left = 1461.0
+margin_top = 990.0
+margin_right = 1672.0
+margin_bottom = 1029.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Argentan to 
+Draux"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Falaise to Draux" type="Label" parent="NameRoads"]
+margin_left = 1417.0
+margin_top = 902.0
+margin_right = 1628.0
+margin_bottom = 941.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Falaise to 
+Draux"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -645,6 +1765,85 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
 text = "Rennes to Angers"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angers to Le Mans" type="Label" parent="NameRoads"]
+margin_left = 1523.0
+margin_top = 1797.0
+margin_right = 1734.0
+margin_bottom = 1836.0
+rect_rotation = -59.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Angers to Le Mans"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Le Mans to Les Forges" type="Label" parent="NameRoads"]
+margin_left = 1772.0
+margin_top = 1548.0
+margin_right = 1983.0
+margin_bottom = 1587.0
+rect_rotation = -44.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Le Mans to 
+Les Forges"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameKingdom" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KingdomEngland" type="Label" parent="NameKingdom"]
+margin_left = 519.0
+margin_top = 634.0
+margin_right = 4873.0
+margin_bottom = 957.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Kingdom of England"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KingdomFrance" type="Label" parent="NameKingdom"]
+margin_left = 1544.0
+margin_top = 3316.0
+margin_right = 4467.0
+margin_bottom = 3639.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Kingdom of France"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KingdomBurgundian" type="Label" parent="NameKingdom"]
+margin_left = 2725.0
+margin_top = 2108.0
+margin_right = 5648.0
+margin_bottom = 2757.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Burgundian 
+state"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
