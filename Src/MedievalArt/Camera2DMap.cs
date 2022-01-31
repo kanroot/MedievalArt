@@ -6,8 +6,8 @@ namespace MedievalArt.MedievalArt
 	{
 		[Export()] private float speedCamera;
 		[Export()] private Vector2 speedZoom;
-		[Export()] private Vector2 minZoom;
-		[Export()] private Vector2 maxZoom;
+		[Export()] public Vector2 minZoom;
+		[Export()] public Vector2 maxZoom;
 		[Export()] public bool CanMove { get; set; }
 		[Export()] public bool CanZoom { get; set; }
 
@@ -36,7 +36,6 @@ namespace MedievalArt.MedievalArt
 		private void ChangeZoom(float delta)
 		{
 			if (!CanZoom) return;
-
 			if (Input.IsActionJustReleased("zoom_in"))
 				if (Zoom > minZoom)
 					Zoom -= speedZoom;

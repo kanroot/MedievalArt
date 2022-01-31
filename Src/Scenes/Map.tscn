@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/GroundMap/output_2.png" type="Texture" id=1]
 [ext_resource path="res://Src/MedievalArt/Ground.cs" type="Script" id=2]
@@ -23,15 +23,25 @@
 [ext_resource path="res://Fonts/FontRoads.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Fonts/Boister/Boisterb.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Fonts/FontKingdom.tres" type="DynamicFont" id=23]
+[ext_resource path="res://Assets/DEM/output_6.png" type="Texture" id=24]
+[ext_resource path="res://Assets/DEM/output_9.png" type="Texture" id=29]
+[ext_resource path="res://Assets/DEM/output_5.png" type="Texture" id=31]
+[ext_resource path="res://Assets/DEM/output_8.png" type="Texture" id=32]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 22 )
 
 [node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Camera2DMap" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1, 1 )
+zoom = Vector2( 4, 4 )
 minZoom = Vector2( 0.6, 0.6 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -484,10 +494,10 @@ __meta__ = {
 }
 
 [node name="Cornouaille to Nantes" type="Label" parent="NameRoads"]
-margin_left = -308.0
-margin_top = 1687.0
-margin_right = -125.0
-margin_bottom = 1705.0
+margin_left = -245.0
+margin_top = 1641.0
+margin_right = -62.0
+margin_bottom = 1659.0
 rect_rotation = 30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
@@ -1322,10 +1332,10 @@ __meta__ = {
 }
 
 [node name="Troyes to Ligny-en-Barrois" type="Label" parent="NameRoads"]
-margin_left = 3830.0
-margin_top = 1421.0
-margin_right = 4041.0
-margin_bottom = 1460.0
+margin_left = 3821.0
+margin_top = 1415.0
+margin_right = 4032.0
+margin_bottom = 1454.0
 rect_rotation = 30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
@@ -1485,10 +1495,10 @@ __meta__ = {
 }
 
 [node name="Paris to Reims" type="Label" parent="NameRoads"]
-margin_left = 3116.0
-margin_top = 706.0
-margin_right = 3327.0
-margin_bottom = 745.0
+margin_left = 3149.0
+margin_top = 681.0
+margin_right = 3360.0
+margin_bottom = 720.0
 rect_rotation = -30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
@@ -1756,10 +1766,10 @@ __meta__ = {
 }
 
 [node name="Rennes to Angers" type="Label" parent="NameRoads"]
-margin_left = 829.0
-margin_top = 1776.0
-margin_right = 1040.0
-margin_bottom = 1815.0
+margin_left = 775.0
+margin_top = 1792.0
+margin_right = 986.0
+margin_bottom = 1831.0
 rect_rotation = 30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 21 )
@@ -1806,10 +1816,10 @@ __meta__ = {
 }
 
 [node name="KingdomEngland" type="Label" parent="NameKingdom"]
-margin_left = 519.0
-margin_top = 634.0
-margin_right = 4873.0
-margin_bottom = 957.0
+margin_left = 505.0
+margin_top = 662.0
+margin_right = 4859.0
+margin_bottom = 985.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 23 )
 text = "Kingdom of England"
@@ -1834,10 +1844,10 @@ __meta__ = {
 }
 
 [node name="KingdomBurgundian" type="Label" parent="NameKingdom"]
-margin_left = 2725.0
-margin_top = 2108.0
-margin_right = 5648.0
-margin_bottom = 2757.0
+margin_left = 2677.0
+margin_top = 2065.0
+margin_right = 5600.0
+margin_bottom = 2714.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 23 )
 text = "Burgundian 
@@ -1847,3 +1857,22 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DEM" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite5" type="Sprite" parent="DEM"]
+position = Vector2( 2362, 2362 )
+texture = ExtResource( 31 )
+
+[node name="Sprite6" type="Sprite" parent="DEM"]
+position = Vector2( 2362, 4724 )
+texture = ExtResource( 24 )
+
+[node name="Sprite8" type="Sprite" parent="DEM"]
+position = Vector2( 4724, 2358 )
+texture = ExtResource( 32 )
+
+[node name="Sprite9" type="Sprite" parent="DEM"]
+position = Vector2( 4723, 4720 )
+texture = ExtResource( 29 )

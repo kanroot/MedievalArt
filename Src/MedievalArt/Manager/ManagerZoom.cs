@@ -6,9 +6,9 @@ namespace MedievalArt.MedievalArt.Manager
 	public class ManagerZoom : Node
 	{
 		private Camera2DMap camera2DMap;
+		private readonly Vector2 zoomLabelNamesKingdom = new Vector2(3, 3);
 		private Ground ground;
 		private Control kingdomLabel;
-		private Vector2? zoom = new Vector2(1, 1);
 		public static ManagerZoom Instance { get; private set; }
 
 		public override void _Ready()
@@ -21,22 +21,36 @@ namespace MedievalArt.MedievalArt.Manager
 
 		public override void _Process(float delta)
 		{
-			zoom = camera2DMap?.Zoom;
-			if (zoom > new Vector2((float)1.5, (float)1.5))
-				ShowLabel(kingdomLabel);
+			MouseZoom(delta);
+		}
+
+
+		private void HiddenLabel(Control label, float delta)
+		{
+			var modulateTemp = label.Modulate;
+			if (camera2DMap?.minZoom >= camera2DMap?.Zoom || modulateTemp.a < 0)
+				modulateTemp.a = 0;
 			else
-				HiddenLabel(kingdomLabel);
+				modulateTemp.a -= delta * 5;
+			label.Modulate = modulateTemp;
 		}
 
-
-		private void HiddenLabel(Control label )
+		private void ShowLabel(Control label, float delta)
 		{
-			label.Visible = false;
+			var modulateTemp = label.Modulate;
+			if (camera2DMap?.Zoom >= zoomLabelNamesKingdom && camera2DMap?.Zoom < camera2DMap?.maxZoom)
+				modulateTemp.a += delta * 5;
+
+			if (camera2DMap?.maxZoom == camera2DMap?.Zoom || modulateTemp.a > 1) modulateTemp.a = 1;
+			label.Modulate = modulateTemp;
 		}
 
-		private void ShowLabel(Control label )
+		private void MouseZoom(float delta)
 		{
-			label.Visible = true;
+			if (Input.IsActionJustReleased("zoom_in"))
+				HiddenLabel(kingdomLabel, delta);
+			if (Input.IsActionJustReleased("zoom_out"))
+				ShowLabel(kingdomLabel, delta);
 		}
 	}
 }
