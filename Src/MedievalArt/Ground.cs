@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MedievalArt.Scenes
+namespace MedievalArt.MedievalArt
 {
 	public class Ground : StaticBody2D
 	{

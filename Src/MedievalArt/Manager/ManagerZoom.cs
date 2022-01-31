@@ -1,5 +1,4 @@
 using Godot;
-using MedievalArt.Scenes;
 
 namespace MedievalArt.MedievalArt.Manager
 {
