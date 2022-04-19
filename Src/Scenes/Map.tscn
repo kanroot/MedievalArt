@@ -1885,7 +1885,7 @@ mountain5 = ExtResource( 28 )
 
 [node name="Line2D" type="Line2D" parent="Mountains"]
 position = Vector2( 21, -3564 )
-points = PoolVector2Array( 875, 5141, 2985, 5382 )
+points = PoolVector2Array( 875, 5141, 1928, 5174, 3380, 5552 )
 
 [node name="Pirineos" type="Line2D" parent="Mountains"]
 position = Vector2( 1, 0 )

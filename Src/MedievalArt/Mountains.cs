@@ -22,20 +22,6 @@ namespace MedievalArt.MedievalArt
 		private void GetTheNextPoint()
 		{
 			var sizeOfMountains = GetSizeOfMountains();
-			var coordinatesX = new List<float>();
-			var difirenceY = new List<float>();
-			for (var i = 0; i < pirineos.GetPointCount() - 1; i++)
-			{
-				var initialPoint = pirineos.GetPointPosition(i);
-				var lastPoint = pirineos.GetPointPosition(i + 1);
-				difirenceY.Add(initialPoint.y - lastPoint.y);
-				while (initialPoint.x <= lastPoint.x)
-				{
-					coordinatesX.Add(initialPoint.x + sizeOfMountains.x / 2);
-					initialPoint.x += sizeOfMountains.x / 2;
-				}
-			}
-
 			var distanceBetweenX = new List<float>();
 			var distanceBetweenY = new List<float>();
 			for (var i = 0; i < pirineos.GetPointCount() - 1; i++)
@@ -44,6 +30,24 @@ namespace MedievalArt.MedievalArt
 				var lastPoint = pirineos.GetPointPosition(i + 1);
 				distanceBetweenX.Add(lastPoint.x - initialPoint.x);
 				distanceBetweenY.Add(lastPoint.y - initialPoint.y);
+			}
+
+			for (var i = 0; i < pirineos.GetPointCount() - 1; i++)
+			{
+				var initialPoint = pirineos.GetPointPosition(i);
+				var countX = distanceBetweenX[i] / (sizeOfMountains.x / 2);
+				var distanceY = distanceBetweenY[i] / countX;
+				for (var j = 0; j < countX; j++)
+				{
+					var mountainInstanced = this.mountain.Instance() as StaticBody2D;
+					if (mountainInstanced != null)
+					{
+						mountainInstanced.Position = new Vector2(initialPoint.x, initialPoint.y);
+						pirineos.AddChild(mountainInstanced);
+					}
+
+					initialPoint = new Vector2(initialPoint.x + sizeOfMountains.x / 2, initialPoint.y + distanceY);
+				}
 			}
 		}
 
