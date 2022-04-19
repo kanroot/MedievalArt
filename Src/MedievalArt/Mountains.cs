@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 namespace MedievalArt.MedievalArt
@@ -18,33 +19,31 @@ namespace MedievalArt.MedievalArt
 			GetTheNextPoint();
 		}
 
-
 		private void GetTheNextPoint()
 		{
-			var sizeOfMountains = GetSizeOfMountains() / 2;
+			var sizeOfMountains = GetSizeOfMountains();
+			var coordinatesX = new List<float>();
+			var difirenceY = new List<float>();
 			for (var i = 0; i < pirineos.GetPointCount() - 1; i++)
 			{
-				var lastPoint = pirineos.GetPointPosition(i + 1);
 				var initialPoint = pirineos.GetPointPosition(i);
+				var lastPoint = pirineos.GetPointPosition(i + 1);
+				difirenceY.Add(initialPoint.y - lastPoint.y);
 				while (initialPoint.x <= lastPoint.x)
 				{
-					initialPoint = new Vector2(initialPoint.x + sizeOfMountains.x, initialPoint.y);
-					if (Math.Abs(initialPoint.y - lastPoint.y) > 1)
-					{
-						if (initialPoint.y < lastPoint.y)
-						{
-							initialPoint = new Vector2(initialPoint.x, initialPoint.y + sizeOfMountains.y);
-						}
-						else
-						{
-							initialPoint = new Vector2(initialPoint.x, initialPoint.y - sizeOfMountains.y);
-						}
-					}
-
-					var mountainInstanced = mountain.Instance() as StaticBody2D;
-					if (mountainInstanced != null) mountainInstanced.Position = initialPoint;
-					pirineos.AddChild(mountainInstanced);
+					coordinatesX.Add(initialPoint.x + sizeOfMountains.x / 2);
+					initialPoint.x += sizeOfMountains.x / 2;
 				}
+			}
+
+			var distanceBetweenX = new List<float>();
+			var distanceBetweenY = new List<float>();
+			for (var i = 0; i < pirineos.GetPointCount() - 1; i++)
+			{
+				var initialPoint = pirineos.GetPointPosition(i);
+				var lastPoint = pirineos.GetPointPosition(i + 1);
+				distanceBetweenX.Add(lastPoint.x - initialPoint.x);
+				distanceBetweenY.Add(lastPoint.y - initialPoint.y);
 			}
 		}
 
