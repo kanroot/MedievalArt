@@ -8,6 +8,7 @@ namespace MedievalArt.MedievalArt
 		[Export()] private Vector2 speedZoom;
 		[Export()] public Vector2 minZoom;
 		[Export()] public Vector2 maxZoom;
+		[Export()] public Vector2 zoomHidenKingdomLabel;
 		[Export()] public bool CanMove { get; set; }
 		[Export()] public bool CanZoom { get; set; }
 
@@ -37,11 +38,18 @@ namespace MedievalArt.MedievalArt
 		{
 			if (!CanZoom) return;
 			if (Input.IsActionJustReleased("zoom_in"))
+			{
 				if (Zoom > minZoom)
 					Zoom -= speedZoom;
-			if (Input.IsActionJustReleased("zoom_out"))
-				if (Zoom < maxZoom)
-					Zoom += speedZoom;
+				if (Zoom < minZoom)
+					Zoom = minZoom;
+			}
+
+			if (!Input.IsActionJustReleased("zoom_out")) return;
+			if (Zoom < maxZoom)
+				Zoom += speedZoom;
+			if (Zoom > maxZoom)
+				Zoom = maxZoom;
 		}
 	}
 }

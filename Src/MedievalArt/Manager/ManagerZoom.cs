@@ -1,21 +1,25 @@
+using System.Diagnostics;
 using Godot;
 
 namespace MedievalArt.MedievalArt.Manager
 {
 	public class ManagerZoom : Node
 	{
+		private Control cameraControl;
 		private Camera2DMap camera2DMap;
-		private readonly Vector2 zoomLabelNamesKingdom = new Vector2(3, 3);
-		private Ground ground;
-		private Control kingdomLabel;
+		private Control kingdomControl;
+		private Control roadControl;
 		public static ManagerZoom Instance { get; private set; }
 
 		public override void _Ready()
 		{
 			Instance = this;
-			camera2DMap = GetTree().CurrentScene.FindNode("Camera2DMap") as Camera2DMap;
-			ground = GetTree().CurrentScene.FindNode("Ground") as Ground;
-			kingdomLabel = GetTree().CurrentScene.FindNode("NameKingdom") as Control;
+			cameraControl = GetTree().CurrentScene.FindNode("CameraControl") as Control;
+			camera2DMap = cameraControl?.GetNode<Camera2DMap>("Camera");
+			kingdomControl = GetTree().CurrentScene.FindNode(
+				"NameKingdom") as Control;
+			roadControl = GetTree().CurrentScene.FindNode(
+				"NameRoads") as Control;
 		}
 
 		public override void _Process(float delta)
@@ -24,32 +28,55 @@ namespace MedievalArt.MedievalArt.Manager
 		}
 
 
-		private void HiddenLabel(Control label, float delta)
+		private void HiddenLabel(CanvasItem kingdom, CanvasItem road, float delta)
 		{
-			var modulateTemp = label.Modulate;
-			if (camera2DMap?.minZoom >= camera2DMap?.Zoom || modulateTemp.a < 0)
-				modulateTemp.a = 0;
+			var kingdomRgba = kingdom.Modulate;
+			var roadRgba = road.Modulate;
+
+			if (camera2DMap?.zoomHidenKingdomLabel >= camera2DMap?.Zoom)
+			{
+				roadRgba.a = 1;
+				kingdomRgba.a = 0;
+			}
 			else
-				modulateTemp.a -= delta * 5;
-			label.Modulate = modulateTemp;
+			{
+				kingdomRgba.a -= delta * 10;
+				roadRgba.a += delta * 10;
+			}
+
+			road.Modulate = roadRgba;
+			kingdom.Modulate = kingdomRgba;
 		}
 
-		private void ShowLabel(Control label, float delta)
+		private void ShowLabel(CanvasItem kingdom, CanvasItem road, float delta)
 		{
-			var modulateTemp = label.Modulate;
-			if (camera2DMap?.Zoom >= zoomLabelNamesKingdom && camera2DMap?.Zoom < camera2DMap?.maxZoom)
-				modulateTemp.a += delta * 5;
+			var kingdomRgba = kingdom.Modulate;
+			var roadRgba = road.Modulate;
 
-			if (camera2DMap?.maxZoom == camera2DMap?.Zoom || modulateTemp.a > 1) modulateTemp.a = 1;
-			label.Modulate = modulateTemp;
+			if (camera2DMap?.Zoom < camera2DMap?.maxZoom && camera2DMap?.Zoom > camera2DMap?.zoomHidenKingdomLabel)
+			{
+				kingdomRgba.a += delta * 10;
+				roadRgba.a -= delta * 10;
+			}
+
+
+			if (camera2DMap?.Zoom == camera2DMap?.maxZoom)
+			{
+				kingdomRgba.a = 1;
+				roadRgba.a = 0;
+			}
+
+
+			road.Modulate = roadRgba;
+			kingdom.Modulate = kingdomRgba;
 		}
 
 		private void MouseZoom(float delta)
 		{
 			if (Input.IsActionJustReleased("zoom_in"))
-				HiddenLabel(kingdomLabel, delta);
+				HiddenLabel(kingdomControl, roadControl, delta);
 			if (Input.IsActionJustReleased("zoom_out"))
-				ShowLabel(kingdomLabel, delta);
+				ShowLabel(kingdomControl, roadControl, delta);
 		}
 	}
 }

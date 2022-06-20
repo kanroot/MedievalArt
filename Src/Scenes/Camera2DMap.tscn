@@ -22,15 +22,17 @@ margin_bottom = 20.0
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource( 2 )
 CanMove = true
 CanZoom = true
-speedCamera = 600.0
+speedCamera = 1000.0
 speedZoom = Vector2( 0.2, 0.2 )
-minZoom = Vector2( 0.2, 0.2 )
+minZoom = Vector2( 0.6, 0.6 )
 maxZoom = Vector2( 4, 4 )
+zoomHidenKingdomLabel = Vector2( 1.8, 1.8 )
 
 [node name="Label" type="Label" parent="Camera"]
 anchor_left = 0.5

@@ -26,18 +26,12 @@
 [ext_resource path="res://Assets/DEM/output_6.png" type="Texture" id=24]
 [ext_resource path="res://Src/MedievalArt/Map.cs" type="Script" id=25]
 [ext_resource path="res://Src/MedievalArt/Debug.cs" type="Script" id=26]
+[ext_resource path="res://Fonts/Debug.tres" type="DynamicFont" id=27]
 [ext_resource path="res://Assets/DEM/output_9.png" type="Texture" id=29]
 [ext_resource path="res://Assets/DEM/output_5.png" type="Texture" id=31]
 [ext_resource path="res://Assets/DEM/output_8.png" type="Texture" id=32]
 
 [sub_resource type="DynamicFont" id=1]
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 22 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 25
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
@@ -64,7 +58,7 @@ position = Vector2( 0, 4724 )
 texture = ExtResource( 5 )
 
 [node name="Sprite4" type="Sprite" parent="Ground"]
-position = Vector2( 2362, 0 )
+position = Vector2( 2362, 1 )
 texture = ExtResource( 7 )
 
 [node name="Sprite5" type="Sprite" parent="Ground"]
@@ -76,7 +70,7 @@ position = Vector2( 2362, 4724 )
 texture = ExtResource( 11 )
 
 [node name="Sprite7" type="Sprite" parent="Ground"]
-position = Vector2( 4724, 0 )
+position = Vector2( 4724, 1 )
 texture = ExtResource( 12 )
 
 [node name="Sprite8" type="Sprite" parent="Ground"]
@@ -84,7 +78,7 @@ position = Vector2( 4724, 2362 )
 texture = ExtResource( 8 )
 
 [node name="Sprite9" type="Sprite" parent="Ground"]
-position = Vector2( 4724, 4727 )
+position = Vector2( 4723, 4726 )
 scale = Vector2( 0.999915, 1.00246 )
 texture = ExtResource( 14 )
 
@@ -437,9 +431,6 @@ position = Vector2( 4724, 4726 )
 texture = ExtResource( 15 )
 
 [node name="NameRoads" type="Control" parent="."]
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Guinguand to Abbaye Saint-Mathieu de Fine-Terre" type="Label" parent="NameRoads"]
 margin_left = -873.0
@@ -451,9 +442,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Guinguand to Pontoul"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Brest to Rerchays" type="Label" parent="NameRoads"]
 margin_left = -590.0
@@ -1889,13 +1877,20 @@ margin_bottom = 40.0
 margin_right = 40.0
 margin_bottom = 28.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 27 )
 
 [node name="FPS" type="Label" parent="Debug/DebugContainer"]
 margin_top = 32.0
 margin_right = 40.0
 margin_bottom = 60.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 27 )
+
+[node name="Zoom" type="Label" parent="Debug/DebugContainer"]
+margin_top = 64.0
+margin_right = 40.0
+margin_bottom = 92.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 27 )
 
 [node name="CameraControl" parent="." instance=ExtResource( 4 )]

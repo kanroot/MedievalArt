@@ -9,6 +9,7 @@ namespace MedievalArt.MedievalArt
 		private CanvasLayer debug;
 		private VBoxContainer debugContainer;
 		private Label debugCoordinates;
+		private Label zoom;
 
 		public override void _Ready()
 		{
@@ -17,11 +18,13 @@ namespace MedievalArt.MedievalArt
 			debug = GetNode<CanvasLayer>("Debug");
 			debugContainer = debug.GetNode<VBoxContainer>("DebugContainer");
 			debugCoordinates = debugContainer.GetNode<Label>("Coordinates");
+			zoom = debugContainer.GetNode<Label>("Zoom");
 		}
 
 		public override void _Process(float delta)
 		{
-			debugCoordinates.Text = "X: " + camera.Position.x + " Y: " + camera.Position.y;
+			debugCoordinates.Text = "X: " + camera.GlobalPosition.x + " Y: " + camera.GlobalPosition.y;
+			zoom.Text = "Zoom: " + camera.Zoom;
 		}
 	}
 }
